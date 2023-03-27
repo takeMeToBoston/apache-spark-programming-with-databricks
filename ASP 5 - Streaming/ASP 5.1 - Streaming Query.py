@@ -7,7 +7,10 @@
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-c27a0f32-d70b-4289-b9cb-0b3f57d6a883
 # MAGIC %md
+# MAGIC 
+# MAGIC 
 # MAGIC # Streaming Query
 # MAGIC 
 # MAGIC ##### Objectives
@@ -27,7 +30,11 @@
 
 # COMMAND ----------
 
-# MAGIC %md ### Build streaming DataFrames
+# DBTITLE 0,--i18n-d483091a-0eff-4095-b07c-b7616d03e03f
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Build streaming DataFrames
 # MAGIC 
 # MAGIC Obtain an initial streaming DataFrame from a Delta-format file source.
 
@@ -44,7 +51,10 @@ df.isStreaming
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-71d3e0bc-7405-4115-8603-467e56dd9c9e
 # MAGIC %md
+# MAGIC 
+# MAGIC 
 # MAGIC Apply some transformations, producing new streaming DataFrames.
 
 # COMMAND ----------
@@ -61,7 +71,11 @@ email_traffic_df.isStreaming
 
 # COMMAND ----------
 
-# MAGIC %md ### Write streaming query results
+# DBTITLE 0,--i18n-2afbce6a-e773-49c9-b693-95db2257ead2
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Write streaming query results
 # MAGIC 
 # MAGIC Take the final streaming DataFrame (our result table) and write it to a file sink in "append" mode.
 
@@ -82,7 +96,10 @@ devices_query = (email_traffic_df
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-abebb6ba-cc8b-49a5-8976-07aa5736f81b
 # MAGIC %md
+# MAGIC 
+# MAGIC 
 # MAGIC ### Monitor streaming query
 # MAGIC 
 # MAGIC Use the streaming query "handle" to monitor and control it.
@@ -113,7 +130,11 @@ devices_query.awaitTermination()
 
 # COMMAND ----------
 
-# MAGIC %md ### Classroom Cleanup
+# DBTITLE 0,--i18n-a0ccbda9-14ff-4209-97a2-725dcee960cd
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Classroom Cleanup
 # MAGIC Run the cell below to clean up resources.
 
 # COMMAND ----------

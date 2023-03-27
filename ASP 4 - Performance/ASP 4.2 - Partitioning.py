@@ -7,7 +7,11 @@
 
 # COMMAND ----------
 
-# MAGIC %md # Partitioning
+# DBTITLE 0,--i18n-626549c9-0309-43a3-baec-ae0fdcaa35ca
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC # Partitioning
 # MAGIC ##### Objectives
 # MAGIC 1. Get partitions and cores
 # MAGIC 1. Repartition DataFrames
@@ -27,7 +31,11 @@
 
 # COMMAND ----------
 
-# MAGIC %md ### Get partitions and cores
+# DBTITLE 0,--i18n-17830688-7910-42d3-a253-c688ff562e9c
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Get partitions and cores
 # MAGIC 
 # MAGIC Use the **`rdd`** method **`getNumPartitions`** to get the number of DataFrame partitions.
 
@@ -38,7 +46,12 @@ df.rdd.getNumPartitions()
 
 # COMMAND ----------
 
-# MAGIC %md Access **`SparkContext`** through **`SparkSession`** to get the number of cores or slots.
+# DBTITLE 0,--i18n-845301f4-e139-4dff-a6ad-c78d3b8aceee
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC Access **`SparkContext`** through **`SparkSession`** to get the number of cores or slots.
 # MAGIC 
 # MAGIC Use the **`defaultParallelism`** attribute to get the number of cores in a cluster.
 
@@ -48,7 +61,12 @@ print(spark.sparkContext.defaultParallelism)
 
 # COMMAND ----------
 
-# MAGIC %md **`SparkContext`** is also provided in Databricks notebooks as the variable **`sc`**.
+# DBTITLE 0,--i18n-2b54cb1e-fff0-432d-9a26-dc26efe90a24
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC **`SparkContext`** is also provided in Databricks notebooks as the variable **`sc`**.
 
 # COMMAND ----------
 
@@ -56,13 +74,21 @@ print(sc.defaultParallelism)
 
 # COMMAND ----------
 
-# MAGIC %md ### Repartition DataFrame
+# DBTITLE 0,--i18n-7e13bd07-e839-45f5-b727-d9763e7e83d6
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Repartition DataFrame
 # MAGIC 
 # MAGIC There are two methods available to repartition a DataFrame: **`repartition`** and **`coalesce`**.
 
 # COMMAND ----------
 
-# MAGIC %md #### **`repartition`**
+# DBTITLE 0,--i18n-728b9e76-ac70-4003-bc8c-dcde137155f1
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC #### **`repartition`**
 # MAGIC Returns a new DataFrame that has exactly **`n`** partitions.
 # MAGIC 
 # MAGIC - Wide transformation
@@ -79,7 +105,11 @@ repartitioned_df.rdd.getNumPartitions()
 
 # COMMAND ----------
 
-# MAGIC %md #### **`coalesce`**
+# DBTITLE 0,--i18n-1d5bbde0-3619-44ff-8fc6-b62a794b6e94
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC #### **`coalesce`**
 # MAGIC Returns a new DataFrame that has exactly **`n`** partitions, when fewer partitions are requested.
 # MAGIC 
 # MAGIC If a larger number of partitions is requested, it will stay at the current number of partitions.
@@ -100,7 +130,11 @@ coalesce_df.rdd.getNumPartitions()
 
 # COMMAND ----------
 
-# MAGIC %md ### Configure default shuffle partitions
+# DBTITLE 0,--i18n-5724d4ef-45d8-44db-a703-d6827dbfde91
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Configure default shuffle partitions
 # MAGIC 
 # MAGIC Use the SparkSession's **`conf`** attribute to get and set dynamic Spark configuration properties. The **`spark.sql.shuffle.partitions`** property determines the number of partitions that result from a shuffle. Let's check its default value:
 
@@ -110,7 +144,11 @@ spark.conf.get("spark.sql.shuffle.partitions")
 
 # COMMAND ----------
 
-# MAGIC %md 
+# DBTITLE 0,--i18n-c67a0a9d-bb97-43a8-aca5-275775e326b7
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
 # MAGIC Assuming that the data set isn't too large, you could configure the default number of shuffle partitions to match the number of cores:
 
 # COMMAND ----------
@@ -120,7 +158,11 @@ print(spark.conf.get("spark.sql.shuffle.partitions"))
 
 # COMMAND ----------
 
-# MAGIC %md ### Partitioning Guidelines
+# DBTITLE 0,--i18n-dae30e85-6039-437c-9cb8-cf8cd16c84b9
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Partitioning Guidelines
 # MAGIC - Make the number of partitions a multiple of the number of cores
 # MAGIC - Target a partition size of ~200MB
 # MAGIC - Size default shuffle partitions by dividing largest shuffle stage input by the target partition size (e.g., 4TB / 200MB = 20,000 shuffle partition count)
@@ -129,7 +171,10 @@ print(spark.conf.get("spark.sql.shuffle.partitions"))
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-39e11a07-1a9f-4d84-a119-8b1dcbe33405
 # MAGIC %md
+# MAGIC 
+# MAGIC 
 # MAGIC ### Adaptive Query Execution
 # MAGIC 
 # MAGIC <img src="https://files.training.databricks.com/images/aspwd/partitioning_aqe.png" width="60%" />
@@ -144,7 +189,11 @@ spark.conf.get("spark.sql.adaptive.enabled")
 
 # COMMAND ----------
 
-# MAGIC %md ### Clean up classroom
+# DBTITLE 0,--i18n-ed5dae82-9a3a-42b0-990f-2560f8ee59fe
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Clean up classroom
 
 # COMMAND ----------
 

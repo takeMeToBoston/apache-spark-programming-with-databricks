@@ -7,7 +7,10 @@
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-b5b99f22-732d-417b-a5e3-90be38f153d0
 # MAGIC %md
+# MAGIC 
+# MAGIC 
 # MAGIC # Datetime Functions
 # MAGIC 
 # MAGIC ##### Objectives
@@ -27,7 +30,12 @@
 
 # COMMAND ----------
 
-# MAGIC %md Let's use a subset of the BedBricks events dataset to practice working with date times.
+# DBTITLE 0,--i18n-a972cc76-7c1e-4a1f-880a-053dedbb3554
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC Let's use a subset of the BedBricks events dataset to practice working with date times.
 
 # COMMAND ----------
 
@@ -38,7 +46,11 @@ display(df)
 
 # COMMAND ----------
 
-# MAGIC %md ### Built-In Functions: Date Time Functions
+# DBTITLE 0,--i18n-3961f384-8390-42e6-8908-1a076590790e
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Built-In Functions: Date Time Functions
 # MAGIC Here are a few built-in functions to manipulate dates and times in Spark.
 # MAGIC 
 # MAGIC | Method | Description |
@@ -53,11 +65,19 @@ display(df)
 
 # COMMAND ----------
 
-# MAGIC %md ### Cast to Timestamp
+# DBTITLE 0,--i18n-e8347945-63e6-44fb-9031-92ebd8dfc3c1
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Cast to Timestamp
 
 # COMMAND ----------
 
-# MAGIC %md #### **`cast()`**
+# DBTITLE 0,--i18n-233b3972-75ab-45a3-ba7d-57716f56f852
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC #### **`cast()`**
 # MAGIC Casts column to a different data type, specified using string representation or DataType.
 
 # COMMAND ----------
@@ -74,7 +94,11 @@ display(timestamp_df)
 
 # COMMAND ----------
 
-# MAGIC %md ### Datetime Patterns for Formatting and Parsing
+# DBTITLE 0,--i18n-560730f5-f0e9-46e1-b309-3645a43b8fad
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Datetime Patterns for Formatting and Parsing
 # MAGIC There are several common scenarios for datetime usage in Spark:
 # MAGIC 
 # MAGIC - CSV/JSON datasources use the pattern string for parsing and formatting datetime content.
@@ -92,15 +116,23 @@ display(timestamp_df)
 # MAGIC | Q/q    | quarter-of-year | number/text  | 3; 03; Q3; 3rd quarter |
 # MAGIC | E      | day-of-week     | text         | Tue; Tuesday           |
 # MAGIC 
-# MAGIC <img src="https://files.training.databricks.com/images/icon_warn_32.png" alt="Warning"> Spark's handling of dates and timestamps changed in version 3.0, and the patterns used for parsing and formatting these values changed as well. For a discussion of these changes, please reference <a href="https://databricks.com/blog/2020/07/22/a-comprehensive-look-at-dates-and-timestamps-in-apache-spark-3-0.html" target="_blank">this Databricks blog post</a>. 
+# MAGIC <img src="https://files.training.databricks.com/images/icon_warn_32.png" alt="Warning"> Spark's handling of dates and timestamps changed in version 3.0, and the patterns used for parsing and formatting these values changed as well. For a discussion of these changes, please reference <a href="https://databricks.com/blog/2020/07/22/a-comprehensive-look-at-dates-and-timestamps-in-apache-spark-3-0.html" target="_blank">this Databricks blog post</a>.
 
 # COMMAND ----------
 
-# MAGIC %md ### Format date
+# DBTITLE 0,--i18n-ddbc5ab6-a545-4331-8dc2-0259d3fcc5ab
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Format date
 
 # COMMAND ----------
 
-# MAGIC %md #### **`date_format()`**
+# DBTITLE 0,--i18n-6886382d-e6d3-42e8-9f3d-9b5941fc0a94
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC #### **`date_format()`**
 # MAGIC Converts a date/timestamp/string to a string formatted with the given date time pattern.
 
 # COMMAND ----------
@@ -115,11 +147,19 @@ display(formatted_df)
 
 # COMMAND ----------
 
-# MAGIC %md ### Extract datetime attribute from timestamp
+# DBTITLE 0,--i18n-f4504afe-b8ad-48b2-a703-880d215b99d1
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Extract datetime attribute from timestamp
 
 # COMMAND ----------
 
-# MAGIC %md #### **`year`**
+# DBTITLE 0,--i18n-7730541d-3880-4a43-995a-e3833a623a02
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC #### **`year`**
 # MAGIC Extracts the year as an integer from a given date/timestamp/string.
 # MAGIC 
 # MAGIC ##### Similar methods: **`month`**, **`dayofweek`**, **`minute`**, **`second`**, etc.
@@ -139,11 +179,19 @@ display(datetime_df)
 
 # COMMAND ----------
 
-# MAGIC %md ### Convert to Date
+# DBTITLE 0,--i18n-1e9c587a-0223-42ab-a201-8a3149ba1172
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Convert to Date
 
 # COMMAND ----------
 
-# MAGIC %md #### **`to_date`**
+# DBTITLE 0,--i18n-fcfd617a-c062-489d-b6f5-efe8e31005eb
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC #### **`to_date`**
 # MAGIC Converts the column into DateType by casting rules to DateType.
 
 # COMMAND ----------
@@ -155,11 +203,19 @@ display(date_df)
 
 # COMMAND ----------
 
-# MAGIC %md ### Manipulate Datetimes
+# DBTITLE 0,--i18n-c1553692-dd61-427f-81be-48078744aa78
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Manipulate Datetimes
 
 # COMMAND ----------
 
-# MAGIC %md #### **`date_add`**
+# DBTITLE 0,--i18n-6dcbf443-fe08-43b7-8869-33f2af780fb1
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC #### **`date_add`**
 # MAGIC Returns the date that is the given number of days after start
 
 # COMMAND ----------
@@ -171,7 +227,11 @@ display(plus_2_df)
 
 # COMMAND ----------
 
-# MAGIC %md ### Clean up classroom
+# DBTITLE 0,--i18n-693676fb-cd44-466d-905c-6b620b68abfc
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Clean up classroom
 
 # COMMAND ----------
 

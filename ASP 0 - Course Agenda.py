@@ -7,7 +7,11 @@
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-94832bc8-20cf-4bab-bbd6-8392c7afe058
 # MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
 # MAGIC # Apache Spark Programming with Databricks
 # MAGIC ## Course Agenda
 # MAGIC 
@@ -15,7 +19,11 @@
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-76fb0d44-b778-4336-9b9e-c207ca894e41
 # MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
 # MAGIC # Day 1 
 # MAGIC ## Introductions
 # MAGIC * [ASP 1.1 - Databricks Platform]($./ASP 1 - Introductions/ASP 1.1 - Databricks Platform)
@@ -31,7 +39,11 @@
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-4f8a2b19-b185-493f-bb7f-7b94efaf766d
 # MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
 # MAGIC # Day 2
 # MAGIC 
 # MAGIC ## Spark Core (Continued)
@@ -45,11 +57,14 @@
 # MAGIC * [ASP 3.3 - Complex Types]($./ASP 3 - Functions/ASP 3.3 - Complex Types)
 # MAGIC * [ASP 3.3L - Users]($./ASP 3 - Functions/ASP 3.3L - Users)
 # MAGIC * [ASP 3.4 - Additional Functions]($./ASP 3 - Functions/ASP 3.4 - Additional Functions)
-# MAGIC   
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-8a5e084c-9d0f-4bf2-bce1-26d19e290244
 # MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
 # MAGIC # Day 3
 # MAGIC ## Functions (Continued)
 # MAGIC * [ASP 3.4L - Abandoned Carts Lab]($./ASP 3 - Functions/ASP 3.4L - Abandoned Carts Lab)
@@ -63,7 +78,11 @@
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-887e5fa7-9df3-4458-9e6a-38765bfb3990
 # MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
 # MAGIC # Day 4
 # MAGIC ## Streaming
 # MAGIC * [ASP 5.1 - Streaming Query]($./ASP 5 - Streaming/ASP 5.1 - Streaming Query)

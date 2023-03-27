@@ -7,7 +7,10 @@
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-20cef24c-ad62-4f88-b1d7-dc681c8367b6
 # MAGIC %md
+# MAGIC 
+# MAGIC 
 # MAGIC # Spark SQL Lab
 # MAGIC 
 # MAGIC ##### Tasks
@@ -29,7 +32,11 @@
 
 # COMMAND ----------
 
-# MAGIC %md ### 1. Create a DataFrame from the **`events`** table
+# DBTITLE 0,--i18n-ebdca5f9-ebbe-4201-a9ba-2b352857fab6
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### 1. Create a DataFrame from the **`events`** table
 # MAGIC - Use SparkSession to create a DataFrame from the **`events`** table
 
 # COMMAND ----------
@@ -39,7 +46,11 @@ events_df = FILL_IN
 
 # COMMAND ----------
 
-# MAGIC %md ### 2. Display DataFrame and inspect schema
+# DBTITLE 0,--i18n-8ea8bd96-3ff2-4ff0-9bf4-0253c250b3bb
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### 2. Display DataFrame and inspect schema
 # MAGIC - Use methods above to inspect DataFrame contents and schema
 
 # COMMAND ----------
@@ -48,7 +59,11 @@ events_df = FILL_IN
 
 # COMMAND ----------
 
-# MAGIC %md ### 3. Apply transformations to filter and sort **`macOS`** events
+# DBTITLE 0,--i18n-cd1e0cf7-0e70-44d1-9306-5bd6820b057e
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### 3. Apply transformations to filter and sort **`macOS`** events
 # MAGIC - Filter for rows where **`device`** is **`macOS`**
 # MAGIC - Sort rows by **`event_timestamp`**
 # MAGIC 
@@ -63,7 +78,11 @@ mac_df = (events_df
 
 # COMMAND ----------
 
-# MAGIC %md ### 4. Count results and take first 5 rows
+# DBTITLE 0,--i18n-880171c8-0275-41da-9cee-5377f4287698
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### 4. Count results and take first 5 rows
 # MAGIC - Use DataFrame actions to count and take rows
 
 # COMMAND ----------
@@ -74,7 +93,12 @@ rows = mac_df.FILL_IN
 
 # COMMAND ----------
 
-# MAGIC %md **4.1: CHECK YOUR WORK**
+# DBTITLE 0,--i18n-91144c8b-b3f1-42fb-94d7-a4bb72396626
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC **4.1: CHECK YOUR WORK**
 
 # COMMAND ----------
 
@@ -87,7 +111,12 @@ print("All test pass")
 
 # COMMAND ----------
 
-# MAGIC %md ### 5. Create the same DataFrame using SQL query
+# DBTITLE 0,--i18n-8073930e-9a33-4e96-bf6d-2c3e79b93c6b
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC ### 5. Create the same DataFrame using SQL query
 # MAGIC - Use SparkSession to run a SQL query on the **`events`** table
 # MAGIC - Use SQL commands to write the same filter and sort query used earlier
 
@@ -100,7 +129,12 @@ display(mac_sql_df)
 
 # COMMAND ----------
 
-# MAGIC %md **5.1: CHECK YOUR WORK**
+# DBTITLE 0,--i18n-ddb8f309-ed6d-49ca-adca-2a059a9b22d2
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC # MAGIC **5.1: CHECK YOUR WORK**
 # MAGIC - You should only see **`macOS`** values in the **`device`** column
 # MAGIC - The fifth row should be an event with timestamp **`1592539226602157`**
 
@@ -114,7 +148,11 @@ print("All test pass")
 
 # COMMAND ----------
 
-# MAGIC %md ### Classroom Cleanup
+# DBTITLE 0,--i18n-5a1d7fa1-d8cb-4bc5-863a-4c21fc5eb8ce
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Classroom Cleanup
 
 # COMMAND ----------
 

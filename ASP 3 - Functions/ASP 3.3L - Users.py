@@ -20,7 +20,11 @@ display(df)
 
 # COMMAND ----------
 
-# MAGIC %md ### 1. Extract item details from purchases
+# DBTITLE 0,--i18n-08f7ee14-cd81-464f-962b-8a2101079235
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### 1. Extract item details from purchases
 # MAGIC 
 # MAGIC - Explode the **`items`** field in **`df`** with the results replacing the existing **`items`** field
 # MAGIC - Select the **`email`** and **`item.item_name`** fields
@@ -48,11 +52,20 @@ assert details_df.count() == 235911
 
 # COMMAND ----------
 
-# MAGIC %md So you can see that our **`details`** column is now an array containing the quality, size, and object type. 
+# DBTITLE 0,--i18n-6cdf4168-211f-445a-8338-069b70b4286b
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC So you can see that our **`details`** column is now an array containing the quality, size, and object type.
 
 # COMMAND ----------
 
-# MAGIC %md ### 2. Extract size and quality options from mattress purchases
+# DBTITLE 0,--i18n-e419efc4-edd2-4cf2-a5be-896366a3d872
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### 2. Extract size and quality options from mattress purchases
 # MAGIC 
 # MAGIC - Filter **`details_df`** for records where **`details`** contains "Mattress"
 # MAGIC - Add a **`size`** column by extracting the element at position 2
@@ -78,11 +91,21 @@ assert mattress_df.count() == 208384
 
 # COMMAND ----------
 
-# MAGIC %md Next we're going to do the same thing for pillow purchases.
+# DBTITLE 0,--i18n-927a03cd-6736-48a9-ace6-85b13cad0355
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC Next we're going to do the same thing for pillow purchases.
 
 # COMMAND ----------
 
-# MAGIC %md ### 3. Extract size and quality options from pillow purchases
+# DBTITLE 0,--i18n-8307241a-65a3-4fc5-afa7-b272a201e602
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC ### 3. Extract size and quality options from pillow purchases
 # MAGIC - Filter **`details_df`** for records where **`details`** contains "Pillow"
 # MAGIC - Add a **`size`** column by extracting the element at position 1
 # MAGIC - Add a **`quality`** column by extracting the element at position 2
@@ -109,7 +132,12 @@ assert pillow_df.count() == 27527
 
 # COMMAND ----------
 
-# MAGIC %md ### 4. Combine data for mattress and pillows
+# DBTITLE 0,--i18n-7bd3677a-73a3-4d24-99c0-8facbcee7c82
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC ### 4. Combine data for mattress and pillows
 # MAGIC 
 # MAGIC - Perform a union on **`mattress_df`** and **`pillow_df`** by column names
 # MAGIC - Drop the **`details`** column
@@ -130,7 +158,10 @@ assert union_df.count() == 235911
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-53e0c35c-a419-47ae-b623-e9f0a4643e64
 # MAGIC %md
+# MAGIC 
+# MAGIC 
 # MAGIC ### 5. List all size and quality options bought by each user
 # MAGIC 
 # MAGIC - Group rows in **`union_df`** by **`email`**
@@ -157,7 +188,11 @@ assert options_df.count() == 210370
 
 # COMMAND ----------
 
-# MAGIC %md ### Clean up classroom
+# DBTITLE 0,--i18n-3aba526c-edb8-47c5-b7b8-f734d7c3eefc
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Clean up classroom
 # MAGIC 
 # MAGIC And lastly, we'll clean up the classroom.
 

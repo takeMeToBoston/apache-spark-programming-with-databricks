@@ -7,7 +7,11 @@
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-5505ea67-f96e-40fd-9c2a-bd4c644c928d
 # MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
 # MAGIC # DataFrame & Column
 # MAGIC ##### Objectives
 # MAGIC 1. Construct columns
@@ -26,7 +30,12 @@
 
 # COMMAND ----------
 
-# MAGIC %md Let's use the BedBricks events dataset.
+# DBTITLE 0,--i18n-b75891cc-f1e5-438b-be68-49f96665fee9
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC Let's use the BedBricks events dataset.
 
 # COMMAND ----------
 
@@ -35,7 +44,12 @@ display(events_df)
 
 # COMMAND ----------
 
-# MAGIC %md ## Column Expressions
+# DBTITLE 0,--i18n-5a4814ee-e5b1-42af-8dfd-beab9b1b3ce7
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC ## Column Expressions
 # MAGIC 
 # MAGIC A <a href="https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/column.html" target="_blank">Column</a> is a logical construction that will be computed based on the data in a DataFrame using an expression
 # MAGIC 
@@ -51,7 +65,10 @@ print(col("device"))
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-d1d6ab85-093e-4f04-8610-2247222e563d
 # MAGIC %md
+# MAGIC 
+# MAGIC 
 # MAGIC Scala supports an additional syntax for creating a new Column based on existing columns in a DataFrame
 
 # COMMAND ----------
@@ -61,7 +78,11 @@ print(col("device"))
 
 # COMMAND ----------
 
-# MAGIC %md 
+# DBTITLE 0,--i18n-cc9be674-735b-44f0-9662-dc68b370af7a
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
 # MAGIC ### Column Operators and Methods
 # MAGIC | Method | Description |
 # MAGIC | --- | --- |
@@ -74,7 +95,12 @@ print(col("device"))
 
 # COMMAND ----------
 
-# MAGIC %md Create complex expressions with existing columns, operators, and methods.
+# DBTITLE 0,--i18n-3ecd52b1-c84e-4d14-9e1c-c03a48ca0f6f
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC Create complex expressions with existing columns, operators, and methods.
 
 # COMMAND ----------
 
@@ -84,7 +110,10 @@ col("event_timestamp").desc()
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-8ba468bb-ee75-4540-a35a-331e94594e30
 # MAGIC %md
+# MAGIC 
+# MAGIC 
 # MAGIC Here's an example of using these column expressions in the context of a DataFrame
 
 # COMMAND ----------
@@ -100,7 +129,11 @@ display(rev_df)
 
 # COMMAND ----------
 
-# MAGIC %md ## DataFrame Transformation Methods
+# DBTITLE 0,--i18n-0100a578-427a-4956-b2d6-d98e3a53cc6a
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ## DataFrame Transformation Methods
 # MAGIC | Method | Description |
 # MAGIC | --- | --- |
 # MAGIC | **`select`** | Returns a new DataFrame by computing given expression for each element |
@@ -115,12 +148,20 @@ display(rev_df)
 
 # COMMAND ----------
 
-# MAGIC %md ### Subset columns
+# DBTITLE 0,--i18n-c89bbba2-4f55-4f22-addc-de25b23ee313
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Subset columns
 # MAGIC Use DataFrame transformations to subset columns
 
 # COMMAND ----------
 
-# MAGIC %md #### **`select()`**
+# DBTITLE 0,--i18n-d57643b9-245e-450f-82b0-b77013f7b684
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC #### **`select()`**
 # MAGIC Selects a list of columns or column based expressions
 
 # COMMAND ----------
@@ -141,7 +182,11 @@ display(locations_df)
 
 # COMMAND ----------
 
-# MAGIC %md #### **`selectExpr()`**
+# DBTITLE 0,--i18n-2ff20919-fa16-4c29-b07e-d43010c8821d
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC #### **`selectExpr()`**
 # MAGIC Selects a list of SQL expressions
 
 # COMMAND ----------
@@ -151,7 +196,11 @@ display(apple_df)
 
 # COMMAND ----------
 
-# MAGIC %md #### **`drop()`**
+# DBTITLE 0,--i18n-eb07b09b-8dd2-4818-9f6f-7f7ad3a6b65e
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC #### **`drop()`**
 # MAGIC Returns a new DataFrame after dropping the given column, specified as a string or Column object
 # MAGIC 
 # MAGIC Use strings to specify multiple columns
@@ -169,12 +218,20 @@ display(no_sales_df)
 
 # COMMAND ----------
 
-# MAGIC %md ### Add or replace columns
+# DBTITLE 0,--i18n-a0632c28-d67f-4288-bf4e-1ade3df2b878
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Add or replace columns
 # MAGIC Use DataFrame transformations to add or replace columns
 
 # COMMAND ----------
 
-# MAGIC %md 
+# DBTITLE 0,--i18n-30f0fff0-fb26-4e29-bb71-6d6d21535c18
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
 # MAGIC #### **`withColumn()`**
 # MAGIC Returns a new DataFrame by adding a column or replacing an existing column that has the same name.
 
@@ -190,7 +247,12 @@ purchase_quantity_df.printSchema()
 
 # COMMAND ----------
 
-# MAGIC %md #### **`withColumnRenamed()`**
+# DBTITLE 0,--i18n-506e9b1b-a1f9-4bc9-86f7-db3b7d48ce7a
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC #### **`withColumnRenamed()`**
 # MAGIC Returns a new DataFrame with a column renamed.
 
 # COMMAND ----------
@@ -200,12 +262,22 @@ display(location_df)
 
 # COMMAND ----------
 
-# MAGIC %md ### Subset Rows
+# DBTITLE 0,--i18n-ec6222b9-3810-4f96-b17d-5952f218d59c
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC ### Subset Rows
 # MAGIC Use DataFrame transformations to subset rows
 
 # COMMAND ----------
 
-# MAGIC %md #### **`filter()`**
+# DBTITLE 0,--i18n-aa67adfe-8712-40e9-9c2b-840dfda38ef9
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC #### **`filter()`**
 # MAGIC Filters rows using the given SQL expression or column based condition.
 # MAGIC 
 # MAGIC ##### Alias: **`where`**
@@ -227,7 +299,11 @@ display(android_df)
 
 # COMMAND ----------
 
-# MAGIC %md #### **`dropDuplicates()`**
+# DBTITLE 0,--i18n-1699cd7f-4bd1-431d-b277-6d6004848c56
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC #### **`dropDuplicates()`**
 # MAGIC Returns a new DataFrame with duplicate rows removed, optionally considering only a subset of columns.
 # MAGIC 
 # MAGIC ##### Alias: **`distinct`**
@@ -243,7 +319,11 @@ display(distinct_users_df)
 
 # COMMAND ----------
 
-# MAGIC %md #### **`limit()`**
+# DBTITLE 0,--i18n-e8daf914-afef-4159-9414-23bde2efd76a
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC #### **`limit()`**
 # MAGIC Returns a new DataFrame by taking the first n rows.
 
 # COMMAND ----------
@@ -253,12 +333,20 @@ display(limit_df)
 
 # COMMAND ----------
 
-# MAGIC %md ### Sort rows
+# DBTITLE 0,--i18n-06c7f4a5-02b7-44f6-a29d-213ee2976d48
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Sort rows
 # MAGIC Use DataFrame transformations to sort rows
 
 # COMMAND ----------
 
-# MAGIC %md #### **`sort()`**
+# DBTITLE 0,--i18n-50c39ed4-f70d-45b7-a452-22b819c0bb30
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC #### **`sort()`**
 # MAGIC Returns a new DataFrame sorted by the given columns or expressions.
 # MAGIC 
 # MAGIC ##### Alias: **`orderBy`**
@@ -285,7 +373,11 @@ display(decrease_sessions_df)
 
 # COMMAND ----------
 
-# MAGIC %md ### Clean up classroom
+# DBTITLE 0,--i18n-0062c495-c719-453d-a3eb-eb495d5bafd3
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Clean up classroom
 
 # COMMAND ----------
 

@@ -7,7 +7,11 @@
 
 # COMMAND ----------
 
-# MAGIC %md # User-Defined Functions
+# DBTITLE 0,--i18n-6073baf8-0a6a-403b-9287-a7d32b63eda8
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC # User-Defined Functions
 # MAGIC 
 # MAGIC ##### Objectives
 # MAGIC 1. Define a function
@@ -28,7 +32,11 @@
 
 # COMMAND ----------
 
-# MAGIC %md ### User-Defined Function (UDF)
+# DBTITLE 0,--i18n-8b417b0d-b543-4930-bfb7-14c358d5b077
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### User-Defined Function (UDF)
 # MAGIC A custom column transformation function
 # MAGIC 
 # MAGIC - Can’t be optimized by Catalyst Optimizer
@@ -38,7 +46,12 @@
 
 # COMMAND ----------
 
-# MAGIC %md For this demo, we're going to use the sales data.
+# DBTITLE 0,--i18n-856c854b-c777-44e6-8f95-e73cd7821909
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC For this demo, we're going to use the sales data.
 
 # COMMAND ----------
 
@@ -47,7 +60,12 @@ display(sales_df)
 
 # COMMAND ----------
 
-# MAGIC %md ### Define a function
+# DBTITLE 0,--i18n-f20fb6e6-f628-48b1-b808-d9ace8352199
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC ### Define a function
 # MAGIC 
 # MAGIC Define a function (on the driver) to get the first letter of a string from the **`email`** field.
 
@@ -60,7 +78,11 @@ first_letter_function("annagray@kaufman.com")
 
 # COMMAND ----------
 
-# MAGIC %md ### Create and apply UDF
+# DBTITLE 0,--i18n-5f3a5cf5-2f99-41fb-82ab-9da773148758
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Create and apply UDF
 # MAGIC Register the function as a UDF. This serializes the function and sends it to executors to be able to transform DataFrame records.
 
 # COMMAND ----------
@@ -69,7 +91,12 @@ first_letter_udf = udf(first_letter_function)
 
 # COMMAND ----------
 
-# MAGIC %md Apply the UDF on the **`email`** column.
+# DBTITLE 0,--i18n-05ea1414-ab37-43a0-ad4a-69f64ae5b445
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC Apply the UDF on the **`email`** column.
 
 # COMMAND ----------
 
@@ -79,7 +106,12 @@ display(sales_df.select(first_letter_udf(col("email"))))
 
 # COMMAND ----------
 
-# MAGIC %md ### Register UDF to use in SQL
+# DBTITLE 0,--i18n-db44861a-9b5e-4ee7-8c40-9478da9a5a60
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC ### Register UDF to use in SQL
 # MAGIC Register the UDF using **`spark.udf.register`** to also make it available for use in the SQL namespace.
 
 # COMMAND ----------
@@ -101,7 +133,11 @@ display(sales_df.select(first_letter_udf(col("email"))))
 
 # COMMAND ----------
 
-# MAGIC %md ### Use Decorator Syntax (Python Only)
+# DBTITLE 0,--i18n-0717df0b-3986-4f76-ac37-2ecbbf536e3a
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Use Decorator Syntax (Python Only)
 # MAGIC 
 # MAGIC Alternatively, you can define and register a UDF using <a href="https://realpython.com/primer-on-python-decorators/" target="_blank">Python decorator syntax</a>. The **`@udf`** decorator parameter is the Column datatype the function returns.
 # MAGIC 
@@ -118,7 +154,12 @@ def first_letter_udf(email: str) -> str:
 
 # COMMAND ----------
 
-# MAGIC %md And let's use our decorator UDF here.
+# DBTITLE 0,--i18n-15b7d228-a4a9-4b29-8ef4-1254701ce583
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC And let's use our decorator UDF here.
 
 # COMMAND ----------
 
@@ -129,7 +170,11 @@ display(sales_df.select(first_letter_udf(col("email"))))
 
 # COMMAND ----------
 
-# MAGIC %md ### Pandas/Vectorized UDFs
+# DBTITLE 0,--i18n-e99e7e62-1bbd-446f-8a01-71d5e49fbb14
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Pandas/Vectorized UDFs
 # MAGIC 
 # MAGIC Pandas UDFs are available in Python to improve the efficiency of UDFs. Pandas UDFs utilize Apache Arrow to speed up computation.
 # MAGIC 
@@ -165,7 +210,12 @@ display(sales_df.select(vectorized_udf(col("email"))))
 
 # COMMAND ----------
 
-# MAGIC %md We can also register these Pandas UDFs to the SQL namespace.
+# DBTITLE 0,--i18n-76f8656d-cd35-4fdd-9a1e-44e4eb7df462
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC We can also register these Pandas UDFs to the SQL namespace.
 
 # COMMAND ----------
 
@@ -179,7 +229,11 @@ spark.udf.register("sql_vectorized_udf", vectorized_udf)
 
 # COMMAND ----------
 
-# MAGIC %md ### Clean up classroom
+# DBTITLE 0,--i18n-8414766d-ccbd-4a83-8883-f3dee4858435
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Clean up classroom
 
 # COMMAND ----------
 

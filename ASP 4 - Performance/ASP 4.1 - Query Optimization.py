@@ -7,7 +7,11 @@
 
 # COMMAND ----------
 
-# MAGIC %md # Query Optimization
+# DBTITLE 0,--i18n-3b413d14-1b92-4b70-92de-f7a952f39082
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC # Query Optimization
 # MAGIC 
 # MAGIC We'll explore query plans and optimizations for several examples including logical optimizations and exanples with and without predicate pushdown.
 # MAGIC 
@@ -21,7 +25,12 @@
 
 # COMMAND ----------
 
-# MAGIC %md Let’s run our set up cell, and get our initial DataFrame stored in the variable **`df`**. Displaying this DataFrame shows us events data.
+# DBTITLE 0,--i18n-736d5858-6b37-4f1a-8a5a-f7f8f9c7d9e5
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC Let’s run our set up cell, and get our initial DataFrame stored in the variable **`df`**. Displaying this DataFrame shows us events data.
 
 # COMMAND ----------
 
@@ -34,7 +43,11 @@ display(df)
 
 # COMMAND ----------
 
-# MAGIC %md ### Logical Optimization
+# DBTITLE 0,--i18n-8da8aff9-5ffc-45a0-b0f7-4b2c04cae2c4
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Logical Optimization
 # MAGIC 
 # MAGIC **`explain(..)`** prints the query plans, optionally formatted by a given explain mode. Compare the following logical plan & physical plan, noting how Catalyst handled the multiple **`filter`** transformations.
 
@@ -57,7 +70,10 @@ limit_events_df.explain(True)
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-4ff48d99-e6a1-4061-baa6-376c2627f759
 # MAGIC %md
+# MAGIC 
+# MAGIC 
 # MAGIC Of course, we could have written the query originally using a single **`filter`** condition ourselves. Compare the previous and following query plans.
 
 # COMMAND ----------
@@ -78,7 +94,10 @@ better_df.explain(True)
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-4bdbe370-c354-4635-8177-2902c501c34a
 # MAGIC %md
+# MAGIC 
+# MAGIC 
 # MAGIC Of course, we wouldn't write the following code intentionally, but in a long, complex query you might not notice the duplicate filter conditions. Let's see what Catalyst does with this query.
 
 # COMMAND ----------
@@ -95,7 +114,10 @@ stupid_df.explain(True)
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-7a6ba89a-fad6-4c4f-89b2-b4f0b1e43502
 # MAGIC %md
+# MAGIC 
+# MAGIC 
 # MAGIC ### Caching
 # MAGIC 
 # MAGIC By default the data of a DataFrame is present on a Spark cluster only while it is being processed during a query -- it is not automatically persisted on the cluster afterwards. (Spark is a data processing engine, not a data storage system.) You can explicity request Spark to persist a DataFrame on the cluster by invoking its **`cache`** method.
@@ -114,7 +136,11 @@ stupid_df.explain(True)
 
 # COMMAND ----------
 
-# MAGIC %md ### Predicate Pushdown
+# DBTITLE 0,--i18n-56f89c15-176f-4fde-8114-b5d6f0e5a240
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Predicate Pushdown
 # MAGIC 
 # MAGIC Here is example reading from a JDBC source, where Catalyst determines that *predicate pushdown* can take place.
 
@@ -126,7 +152,7 @@ stupid_df.explain(True)
 
 # COMMAND ----------
 
-jdbc_url = "jdbc:postgresql://35.89.73.255/training"
+jdbc_url = "jdbc:postgresql://server1.training.databricks.com/training"
 
 # Username and Password w/read-only rights
 conn_properties = {
@@ -151,11 +177,20 @@ pp_df.explain(True)
 
 # COMMAND ----------
 
-# MAGIC %md Note the lack of a **Filter** and the presence of a **PushedFilters** in the **Scan**. The filter operation is pushed to the database and only the matching records are sent to Spark. This can greatly reduce the amount of data that Spark needs to ingest.
+# DBTITLE 0,--i18n-3b46d1d1-d9c9-4b44-90b6-099c6020f56e
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC Note the lack of a **Filter** and the presence of a **PushedFilters** in the **Scan**. The filter operation is pushed to the database and only the matching records are sent to Spark. This can greatly reduce the amount of data that Spark needs to ingest.
 
 # COMMAND ----------
 
-# MAGIC %md ### No Predicate Pushdown
+# DBTITLE 0,--i18n-5dc0fe21-d96b-4246-9e79-f5a94c06c38b
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### No Predicate Pushdown
 # MAGIC 
 # MAGIC In comparison, caching the data before filtering eliminates the possibility for the predicate push down.
 
@@ -180,13 +215,21 @@ filtered_df.explain(True)
 
 # COMMAND ----------
 
-# MAGIC %md In addition to the **Scan** (the JDBC read) we saw in the previous example, here we also see the **InMemoryTableScan** followed by a **Filter** in the explain plan.
+# DBTITLE 0,--i18n-1a5e05ae-b422-4997-8db9-6f1f6ce7fc73
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC In addition to the **Scan** (the JDBC read) we saw in the previous example, here we also see the **InMemoryTableScan** followed by a **Filter** in the explain plan.
 # MAGIC 
 # MAGIC This means Spark had to read ALL the data from the database and cache it, and then scan it in cache to find the records matching the filter condition.
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-59b7959a-70e0-4632-ad32-96a5dcdcde7b
 # MAGIC %md
+# MAGIC 
+# MAGIC 
 # MAGIC Remember to clean up after ourselves!
 
 # COMMAND ----------
@@ -195,7 +238,11 @@ cached_df.unpersist()
 
 # COMMAND ----------
 
-# MAGIC %md ### Clean up classroom
+# DBTITLE 0,--i18n-f17ee199-dec9-4b05-89ed-da664e4d2ac3
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Clean up classroom
 
 # COMMAND ----------
 

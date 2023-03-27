@@ -7,7 +7,11 @@
 
 # COMMAND ----------
 
-# MAGIC %md # Reader & Writer
+# DBTITLE 0,--i18n-66303a31-c6ea-4d3c-9e11-abd55993c014
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC # Reader & Writer
 # MAGIC ##### Objectives
 # MAGIC 1. Read from CSV files
 # MAGIC 1. Read from JSON files
@@ -29,7 +33,11 @@
 
 # COMMAND ----------
 
-# MAGIC %md ## DataFrameReader
+# DBTITLE 0,--i18n-7f74aa58-3c7e-4485-be3e-60ed16d191b0
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ## DataFrameReader
 # MAGIC Interface used to load a DataFrame from external storage systems
 # MAGIC 
 # MAGIC **`spark.read.parquet("path/to/files")`**
@@ -38,7 +46,11 @@
 
 # COMMAND ----------
 
-# MAGIC %md ### Read from CSV files
+# DBTITLE 0,--i18n-5bba9927-0496-4938-9f87-f2f47d978d64
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Read from CSV files
 # MAGIC Read from CSV with the DataFrameReader's **`csv`** method and the following options:
 # MAGIC 
 # MAGIC Tab separator, use first line as header, infer schema
@@ -59,7 +71,10 @@ users_df.printSchema()
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-a5b22677-d1b5-4cb0-a08a-9e98626ba587
 # MAGIC %md
+# MAGIC 
+# MAGIC 
 # MAGIC Spark's Python API also allows you to specify the DataFrameReader options as parameters to the **`csv`** method
 
 # COMMAND ----------
@@ -73,7 +88,12 @@ users_df.printSchema()
 
 # COMMAND ----------
 
-# MAGIC %md Manually define the schema by creating a **`StructType`** with column names and data types
+# DBTITLE 0,--i18n-af4cc86a-1345-4fca-af9e-9c8536e11c18
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC Manually define the schema by creating a **`StructType`** with column names and data types
 
 # COMMAND ----------
 
@@ -87,7 +107,12 @@ user_defined_schema = StructType([
 
 # COMMAND ----------
 
-# MAGIC %md Read from CSV using this user-defined schema instead of inferring the schema
+# DBTITLE 0,--i18n-1126fe7b-87eb-44e9-bcd4-a75bc5b119a6
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC Read from CSV using this user-defined schema instead of inferring the schema
 
 # COMMAND ----------
 
@@ -101,7 +126,12 @@ users_df = (spark
 
 # COMMAND ----------
 
-# MAGIC %md Alternatively, define the schema using <a href="https://en.wikipedia.org/wiki/Data_definition_language" target="_blank">data definition language (DDL)</a> syntax.
+# DBTITLE 0,--i18n-92d687de-c80c-429a-9522-cb032ba13a9b
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC Alternatively, define the schema using <a href="https://en.wikipedia.org/wiki/Data_definition_language" target="_blank">data definition language (DDL)</a> syntax.
 
 # COMMAND ----------
 
@@ -117,7 +147,11 @@ users_df = (spark
 
 # COMMAND ----------
 
-# MAGIC %md ### Read from JSON files
+# DBTITLE 0,--i18n-e6eb716e-4634-4ced-9771-711541761085
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Read from JSON files
 # MAGIC 
 # MAGIC Read from JSON with DataFrameReader's **`json`** method and the infer schema option
 
@@ -135,7 +169,12 @@ events_df.printSchema()
 
 # COMMAND ----------
 
-# MAGIC %md Read data faster by creating a **`StructType`** with the schema names and data types
+# DBTITLE 0,--i18n-7ca81f5a-08e3-44c9-b935-e5c5c666c815
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC Read data faster by creating a **`StructType`** with the schema names and data types
 
 # COMMAND ----------
 
@@ -178,7 +217,12 @@ events_df = (spark
 
 # COMMAND ----------
 
-# MAGIC %md You can use the **`StructType`** Scala method **`toDDL`** to have a DDL-formatted string created for you.
+# DBTITLE 0,--i18n-a8ad41a8-413e-466a-97f7-d5195258ae10
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC You can use the **`StructType`** Scala method **`toDDL`** to have a DDL-formatted string created for you.
 # MAGIC 
 # MAGIC This is convenient when you need to get the DDL-formated string for ingesting CSV and JSON but you don't want to hand craft it or the **`StructType`** variant of the schema.
 # MAGIC 
@@ -191,7 +235,10 @@ spark.conf.set("whatever_your_scope.events", events_json_path)
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-5dde5648-2a28-47b6-98c2-2b78d6a655d0
 # MAGIC %md
+# MAGIC 
+# MAGIC 
 # MAGIC In a Python notebook like this one, create a Scala cell to injest the data and produce the DDL formatted schema
 
 # COMMAND ----------
@@ -225,7 +272,10 @@ display(events_df)
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-f625ff39-c731-4c7b-a3c0-5b1c0b0ed760
 # MAGIC %md
+# MAGIC 
+# MAGIC 
 # MAGIC This is a great "trick" for producing a schema for a net-new dataset and for accelerating development.
 # MAGIC 
 # MAGIC When you are done (e.g. for Step #7), make sure to delete your temporary code.
@@ -236,7 +286,11 @@ display(events_df)
 
 # COMMAND ----------
 
-# MAGIC %md ## DataFrameWriter
+# DBTITLE 0,--i18n-e1ba25ff-646a-434a-94aa-1dda43388eec
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ## DataFrameWriter
 # MAGIC Interface used to write a DataFrame to external storage systems
 # MAGIC 
 # MAGIC <strong><code>
@@ -252,7 +306,11 @@ display(events_df)
 
 # COMMAND ----------
 
-# MAGIC %md ### Write DataFrames to files
+# DBTITLE 0,--i18n-67e5c4f1-cb91-450d-a537-288dec6a8a53
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Write DataFrames to files
 # MAGIC 
 # MAGIC Write **`users_df`** to parquet with DataFrameWriter's **`parquet`** method and the following configurations:
 # MAGIC 
@@ -277,7 +335,10 @@ display(
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-e2773c8e-02a1-4c6d-8089-5e6e3c7f0952
 # MAGIC %md
+# MAGIC 
+# MAGIC 
 # MAGIC As with DataFrameReader, Spark's Python API also allows you to specify the DataFrameWriter options as parameters to the **`parquet`** method
 
 # COMMAND ----------
@@ -289,7 +350,11 @@ display(
 
 # COMMAND ----------
 
-# MAGIC %md ### Write DataFrames to tables
+# DBTITLE 0,--i18n-e7eda404-11d6-4e3e-96b1-0abb3c15b1fb
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Write DataFrames to tables
 # MAGIC 
 # MAGIC Write **`events_df`** to a table using the DataFrameWriter method **`saveAsTable`**
 # MAGIC 
@@ -301,7 +366,12 @@ events_df.write.mode("overwrite").saveAsTable("events")
 
 # COMMAND ----------
 
-# MAGIC %md This table was saved in the database created for you in classroom setup.
+# DBTITLE 0,--i18n-99ce9f84-63bf-4f6f-9518-c7b2b9160627
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC This table was saved in the database created for you in classroom setup.
 # MAGIC 
 # MAGIC See database name printed below.
 
@@ -311,7 +381,12 @@ print(f"Database Name: {DA.schema_name}")
 
 # COMMAND ----------
 
-# MAGIC %md ... or even the tables in that database:
+# DBTITLE 0,--i18n-ca9ca576-c72c-4522-844e-1fa458b68b80
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC ... or even the tables in that database:
 
 # COMMAND ----------
 
@@ -320,7 +395,10 @@ print(f"Database Name: {DA.schema_name}")
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-32d25721-e313-44bf-a576-842eaab570af
 # MAGIC %md
+# MAGIC 
+# MAGIC 
 # MAGIC ## Delta Lake
 # MAGIC 
 # MAGIC In almost all cases, the best practice is to use Delta Lake format, especially whenever the data will be referenced from a Databricks workspace. 
@@ -341,7 +419,10 @@ print(f"Database Name: {DA.schema_name}")
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-eef7e839-93de-48bc-8267-d27b1996a9ed
 # MAGIC %md
+# MAGIC 
+# MAGIC 
 # MAGIC ### Write Results to a Delta Table
 # MAGIC 
 # MAGIC Write **`events_df`** with the DataFrameWriter's **`save`** method and the following configurations: Delta format & overwrite mode.
@@ -359,7 +440,11 @@ events_output_path = f"{DA.paths.working_dir}/delta/events"
 
 # COMMAND ----------
 
-# MAGIC %md ### Clean up classroom
+# DBTITLE 0,--i18n-05f47836-3d11-4204-ad80-50e573bd6d2f
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Clean up classroom
 
 # COMMAND ----------
 

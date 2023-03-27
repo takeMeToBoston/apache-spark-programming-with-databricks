@@ -7,7 +7,10 @@
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-c22511ee-b15c-4a9f-a051-c905b8e344e9
 # MAGIC %md
+# MAGIC 
+# MAGIC 
 # MAGIC # Coupon Sales Lab
 # MAGIC Process and append streaming data on transactions using coupons.
 # MAGIC 1. Read data stream
@@ -27,7 +30,11 @@
 
 # COMMAND ----------
 
-# MAGIC %md ### 1. Read data stream
+# DBTITLE 0,--i18n-d166abd5-a348-46f9-8134-72f510207bc1
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### 1. Read data stream
 # MAGIC - Set to process 1 file per trigger
 # MAGIC - Read from Delta files in the source directory specified by **`DA.paths.sales`**
 # MAGIC 
@@ -41,7 +48,12 @@ df = (spark.FILL_IN
 
 # COMMAND ----------
 
-# MAGIC %md **1.1: CHECK YOUR WORK**
+# DBTITLE 0,--i18n-7655ea48-abe2-4ff2-abf3-3d25e728fbe3
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC **1.1: CHECK YOUR WORK**
 
 # COMMAND ----------
 
@@ -49,7 +61,11 @@ DA.tests.validate_1_1(df)
 
 # COMMAND ----------
 
-# MAGIC %md ### 2. Filter for transactions with coupon codes
+# DBTITLE 0,--i18n-d3f81153-b55d-4ce8-9012-91fd09185880
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### 2. Filter for transactions with coupon codes
 # MAGIC - Explode the **`items`** field in **`df`** with the results replacing the existing **`items`** field
 # MAGIC - Filter for records where **`items.coupon`** is not null
 # MAGIC 
@@ -63,7 +79,12 @@ coupon_sales_df = (df.FILL_IN
 
 # COMMAND ----------
 
-# MAGIC %md **2.1: CHECK YOUR WORK**
+# DBTITLE 0,--i18n-37e4766a-e845-4b4e-9e7e-82d63fbfc29f
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC **2.1: CHECK YOUR WORK**
 
 # COMMAND ----------
 
@@ -71,7 +92,11 @@ DA.tests.validate_2_1(coupon_sales_df.schema)
 
 # COMMAND ----------
 
-# MAGIC %md ### 3. Write streaming query results to Delta
+# DBTITLE 0,--i18n-793d6d02-ac0b-4dfa-b711-b4a01636e099
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### 3. Write streaming query results to Delta
 # MAGIC - Configure the streaming query to write Delta format files in "append" mode
 # MAGIC - Set the query name to "coupon_sales"
 # MAGIC - Set a trigger interval of 1 second
@@ -92,7 +117,12 @@ DA.block_until_stream_is_ready(coupon_sales_query)
 
 # COMMAND ----------
 
-# MAGIC %md **3.1: CHECK YOUR WORK**
+# DBTITLE 0,--i18n-204ee663-db1b-441a-9084-a58a9aa88a9c
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC **3.1: CHECK YOUR WORK**
 
 # COMMAND ----------
 
@@ -100,7 +130,11 @@ DA.tests.validate_3_1(coupon_sales_query)
 
 # COMMAND ----------
 
-# MAGIC %md ### 4. Monitor streaming query
+# DBTITLE 0,--i18n-a8c6095a-6725-4ecc-8c23-f85832d548f9
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### 4. Monitor streaming query
 # MAGIC - Get the ID of streaming query and store it in **`queryID`**
 # MAGIC - Get the status of streaming query and store it in **`queryStatus`**
 
@@ -116,7 +150,12 @@ query_status = coupon_sales_query.FILL_IN
 
 # COMMAND ----------
 
-# MAGIC %md **4.1: CHECK YOUR WORK**
+# DBTITLE 0,--i18n-80d700dc-c312-4c0d-8997-1ce7fe69aefd
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC **4.1: CHECK YOUR WORK**
 
 # COMMAND ----------
 
@@ -124,7 +163,11 @@ DA.tests.validate_4_1(query_id, query_status)
 
 # COMMAND ----------
 
-# MAGIC %md ### 5. Stop streaming query
+# DBTITLE 0,--i18n-fac79dfb-738f-4c44-ae25-8e9439866be6
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### 5. Stop streaming query
 # MAGIC - Stop the streaming query
 
 # COMMAND ----------
@@ -134,7 +177,12 @@ coupon_sales_query.FILL_IN
 
 # COMMAND ----------
 
-# MAGIC %md **5.1: CHECK YOUR WORK**
+# DBTITLE 0,--i18n-4b582543-cdec-47f0-9ee3-55a8b2dc42db
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC **5.1: CHECK YOUR WORK**
 
 # COMMAND ----------
 
@@ -142,7 +190,11 @@ DA.tests.validate_5_1(coupon_sales_query)
 
 # COMMAND ----------
 
-# MAGIC %md ### 6. Verify the records were written in Delta format
+# DBTITLE 0,--i18n-9e759d24-b277-4237-86ff-92650fdac8f7
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### 6. Verify the records were written in Delta format
 
 # COMMAND ----------
 
@@ -150,7 +202,11 @@ DA.tests.validate_5_1(coupon_sales_query)
 
 # COMMAND ----------
 
-# MAGIC %md ### Classroom Cleanup
+# DBTITLE 0,--i18n-7917bc49-1f8c-404a-b37c-76fa3d945620
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Classroom Cleanup
 # MAGIC Run the cell below to clean up resources.
 
 # COMMAND ----------

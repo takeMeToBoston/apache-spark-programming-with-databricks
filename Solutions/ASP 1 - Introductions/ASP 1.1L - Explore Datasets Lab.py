@@ -7,7 +7,10 @@
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-07f4fc7f-00c7-45f0-a3da-d8317e646802
 # MAGIC %md
+# MAGIC 
+# MAGIC 
 # MAGIC # Explore Datasets Lab
 # MAGIC 
 # MAGIC We will use tools introduced in this lesson to explore the datasets used in this course.
@@ -28,7 +31,11 @@
 
 # COMMAND ----------
 
-# MAGIC %md ### 1. List files in DBFS using magic commands
+# DBTITLE 0,--i18n-418554c8-03e8-461f-9724-6314c7acd53e
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### 1. List files in DBFS using magic commands
 # MAGIC Use a magic command to display files located in the DBFS directory: **`dbfs:/mnt/dbacademy-users/`**
 # MAGIC 
 # MAGIC <img src="https://files.training.databricks.com/images/icon_hint_32.png" alt="Hint"> You should see several user directories including your own. Depending on your permissions, you may see only your user directory.
@@ -39,7 +46,11 @@
 
 # COMMAND ----------
 
-# MAGIC %md ### 2. List files in DBFS using dbutils
+# DBTITLE 0,--i18n-8ad4d9c6-75e8-4f02-9962-20045fc781be
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### 2. List files in DBFS using dbutils
 # MAGIC - Use **`dbutils`** to get the files at the directory above and assign it to the variable **`files`**
 # MAGIC - Use the Databricks display() function to display the contents in **`files`**
 # MAGIC 
@@ -53,7 +64,11 @@ display(files)
 
 # COMMAND ----------
 
-# MAGIC %md ### 3. Create tables below from files in DBFS
+# DBTITLE 0,--i18n-28ce7cfb-287a-47a9-8974-c0a99bedcf2e
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### 3. Create tables below from files in DBFS
 # MAGIC - Create the **`users`** table using the spark-context variable **`DA.paths.users`**
 # MAGIC - Create the **`sales`** table using the spark-context variable **`DA.paths.sales`**
 # MAGIC - Create the **`products`** table using the spark-context variable **`DA.paths.products`**
@@ -72,11 +87,20 @@ display(files)
 
 # COMMAND ----------
 
-# MAGIC %md Use the data tab of the workspace UI to confirm your tables were created.
+# DBTITLE 0,--i18n-fbbfc7b2-2a54-4b81-a17f-77de6aec377f
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC Use the data tab of the workspace UI to confirm your tables were created.
 
 # COMMAND ----------
 
-# MAGIC %md ### 4. Execute SQL to explore BedBricks datasets
+# DBTITLE 0,--i18n-55e585c9-b437-44c6-ac03-f11c7cd9c38b
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### 4. Execute SQL to explore BedBricks datasets
 # MAGIC Run SQL queries on the **`products`**, **`sales`**, and **`events`** tables to answer the following questions. 
 # MAGIC - What products are available for purchase at BedBricks?
 # MAGIC - What is the average purchase revenue for a transaction at BedBricks?
@@ -86,7 +110,11 @@ display(files)
 
 # COMMAND ----------
 
-# MAGIC %md 
+# DBTITLE 0,--i18n-60b7be2f-7f11-4e34-bf18-57e39d69f6ca
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
 # MAGIC #### 4.1: What products are available for purchase at BedBricks?
 # MAGIC 
 # MAGIC The **`products`** dataset contains the ID, name, and price of products on the BedBricks retail site.
@@ -109,7 +137,11 @@ display(files)
 
 # COMMAND ----------
 
-# MAGIC %md #### 4.2: What is the average purchase revenue for a transaction at BedBricks?
+# DBTITLE 0,--i18n-535df503-7397-4c6b-a89b-39b310f09ff7
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC #### 4.2: What is the average purchase revenue for a transaction at BedBricks?
 # MAGIC 
 # MAGIC The **`sales`** dataset contains order information representing successfully processed sales.  
 # MAGIC Most fields correspond directly with fields from the clickstream data associated with a sale finalization event.
@@ -137,7 +169,11 @@ display(files)
 
 # COMMAND ----------
 
-# MAGIC %md #### 4.3: What types of events are recorded on the BedBricks website?
+# DBTITLE 0,--i18n-1646e571-2039-4f10-b407-5139b89199ef
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC #### 4.3: What types of events are recorded on the BedBricks website?
 # MAGIC 
 # MAGIC The **`events`** dataset contains two weeks worth of parsed JSON records, created by consuming updates to an operational database.  
 # MAGIC Records are received whenever: (1) a new user visits the site, (2) a user provides their email for the first time.
@@ -168,7 +204,11 @@ display(files)
 
 # COMMAND ----------
 
-# MAGIC %md ### Clean up classroom
+# DBTITLE 0,--i18n-d68908dd-7069-4671-850a-db458003aa53
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Clean up classroom
 
 # COMMAND ----------
 

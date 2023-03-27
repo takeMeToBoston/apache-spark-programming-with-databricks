@@ -7,7 +7,10 @@
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-a1996ff5-af6a-49a6-9cf6-bf7e2f11d9ff
 # MAGIC %md
+# MAGIC 
+# MAGIC 
 # MAGIC # De-Duping Data Lab
 # MAGIC 
 # MAGIC In this exercise, we're doing ETL on a file we've received from a customer. That file contains data about people, including:
@@ -50,7 +53,10 @@
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-c9d419b3-237e-4d75-89ad-c184d40bb7b3
 # MAGIC %md
+# MAGIC 
+# MAGIC 
 # MAGIC It's helpful to look at the file first, so you can check the format with **`dbutils.fs.head()`**.
 
 # COMMAND ----------
@@ -115,7 +121,12 @@ display(dbutils.fs.ls(delta_dest_dir))
 
 # COMMAND ----------
 
-# MAGIC %md **CHECK YOUR WORK**
+# DBTITLE 0,--i18n-57d9884d-057e-4815-8814-4e65d842d952
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC **CHECK YOUR WORK**
 
 # COMMAND ----------
 
@@ -139,7 +150,10 @@ print("All test pass")
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-a532d460-fd0b-44b3-8130-337c413846b7
 # MAGIC %md
+# MAGIC 
+# MAGIC 
 # MAGIC ## Clean up classroom
 # MAGIC Run the cell below to clean up resources.
 

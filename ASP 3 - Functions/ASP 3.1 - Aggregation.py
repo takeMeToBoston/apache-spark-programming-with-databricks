@@ -7,7 +7,10 @@
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-33ed5661-945e-4602-9062-1d41550d349e
 # MAGIC %md
+# MAGIC 
+# MAGIC 
 # MAGIC # Aggregation
 # MAGIC 
 # MAGIC ##### Objectives
@@ -26,7 +29,12 @@
 
 # COMMAND ----------
 
-# MAGIC %md Let's use the BedBricks events dataset.
+# DBTITLE 0,--i18n-53c415db-4b5b-4572-a19b-98af284f250a
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC Let's use the BedBricks events dataset.
 
 # COMMAND ----------
 
@@ -35,13 +43,23 @@ display(df)
 
 # COMMAND ----------
 
-# MAGIC %md ### Grouping data
+# DBTITLE 0,--i18n-d33fd16f-8f2c-45e0-94a1-2f5638a1f44c
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC ### Grouping data
 # MAGIC 
 # MAGIC <img src="https://files.training.databricks.com/images/aspwd/aggregation_groupby.png" width="60%" />
 
 # COMMAND ----------
 
-# MAGIC %md ### groupBy
+# DBTITLE 0,--i18n-33c82540-0afb-41d5-8366-b072102ae475
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC ### groupBy
 # MAGIC Use the DataFrame **`groupBy`** method to create a grouped data object. 
 # MAGIC 
 # MAGIC This grouped data object is called **`RelationalGroupedDataset`** in Scala and **`GroupedData`** in Python.
@@ -56,7 +74,12 @@ df.groupBy("geo.state", "geo.city")
 
 # COMMAND ----------
 
-# MAGIC %md ### Grouped data methods
+# DBTITLE 0,--i18n-de9bc0c1-8991-448d-be80-f3dd455bee06
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC ### Grouped data methods
 # MAGIC Various aggregation methods are available on the <a href="https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/grouping.html" target="_blank">GroupedData</a> object.
 # MAGIC 
 # MAGIC 
@@ -78,7 +101,12 @@ display(event_counts_df)
 
 # COMMAND ----------
 
-# MAGIC %md Here, we're getting the average purchase revenue for each.
+# DBTITLE 0,--i18n-1bc3f8ca-7dec-4b6a-9647-00791b82b2ac
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC Here, we're getting the average purchase revenue for each.
 
 # COMMAND ----------
 
@@ -87,7 +115,10 @@ display(avg_state_purchases_df)
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-a3c86855-8cf6-4832-bad1-67c2e19ae93a
 # MAGIC %md
+# MAGIC 
+# MAGIC 
 # MAGIC And here the total quantity and sum of the purchase revenue for each combination of state and city.
 
 # COMMAND ----------
@@ -97,14 +128,22 @@ display(city_purchase_quantities_df)
 
 # COMMAND ----------
 
-# MAGIC %md ## Built-In Functions
+# DBTITLE 0,--i18n-41705fda-f6ec-4008-8561-3d89b337ba35
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ## Built-In Functions
 # MAGIC In addition to DataFrame and Column transformation methods, there are a ton of helpful functions in Spark's built-in <a href="https://docs.databricks.com/spark/latest/spark-sql/language-manual/sql-ref-functions-builtin.html" target="_blank">SQL functions</a> module.
 # MAGIC 
 # MAGIC In Scala, this is <a href="https://spark.apache.org/docs/latest/api/scala/org/apache/spark/sql/functions$.html" target="_blank">**`org.apache.spark.sql.functions`**</a>, and <a href="https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql.html#functions" target="_blank">**`pyspark.sql.functions`**</a> in Python. Functions from this module must be imported into your code.
 
 # COMMAND ----------
 
-# MAGIC %md ### Aggregate Functions
+# DBTITLE 0,--i18n-4c587ad6-517c-4416-8ed9-24df20602f8e
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Aggregate Functions
 # MAGIC 
 # MAGIC Here are some of the built-in functions available for aggregation.
 # MAGIC 
@@ -133,7 +172,12 @@ display(state_purchases_df)
 
 # COMMAND ----------
 
-# MAGIC %md Apply multiple aggregate functions on grouped data
+# DBTITLE 0,--i18n-0cbb1c99-23da-45cd-85f2-b4de3e6d2587
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC Apply multiple aggregate functions on grouped data
 
 # COMMAND ----------
 
@@ -149,7 +193,11 @@ display(state_aggregates_df)
 
 # COMMAND ----------
 
-# MAGIC %md ### Math Functions
+# DBTITLE 0,--i18n-fbc371d8-a5c5-46e4-856c-43e84b029d72
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Math Functions
 # MAGIC Here are some of the built-in functions for math operations.
 # MAGIC 
 # MAGIC | Method | Description |
@@ -171,7 +219,11 @@ display(spark.range(10)  # Create a DataFrame with a single column called "id" w
 
 # COMMAND ----------
 
-# MAGIC %md ### Clean up classroom
+# DBTITLE 0,--i18n-cfb43a90-72e5-466e-82e6-31e1f14dfbf3
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Clean up classroom
 
 # COMMAND ----------
 

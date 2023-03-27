@@ -7,7 +7,10 @@
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-34de9fea-de6f-464d-8132-d904ba976f5d
 # MAGIC %md
+# MAGIC 
+# MAGIC 
 # MAGIC # Sort Day Lab
 # MAGIC 
 # MAGIC ##### Tasks
@@ -21,7 +24,12 @@
 
 # COMMAND ----------
 
-# MAGIC %md Start with a DataFrame of the average number of active users by day of week.
+# DBTITLE 0,--i18n-fcf6dfd3-d3d4-409d-9f81-7529dcfeed13
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC Start with a DataFrame of the average number of active users by day of week.
 # MAGIC 
 # MAGIC This was the resulting **`df`** in a previous lab.
 
@@ -44,7 +52,10 @@ display(df)
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-6e37fd9e-90db-41e4-9835-bfdaf51a323b
 # MAGIC %md
+# MAGIC 
+# MAGIC 
 # MAGIC ### 1. Define UDF to label day of week
 # MAGIC 
 # MAGIC Use the **`label_day_of_week`** function provided below to create the UDF **`label_dow_udf`**
@@ -63,7 +74,11 @@ label_dow_udf = FILL_IN
 
 # COMMAND ----------
 
-# MAGIC %md ### 2. Apply UDF to label and sort by day of week
+# DBTITLE 0,--i18n-b824f84c-c87a-422f-9a8f-bd217c416936
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### 2. Apply UDF to label and sort by day of week
 # MAGIC - Update the **`day`** column by applying the UDF and replacing this column
 # MAGIC - Sort by **`day`**
 # MAGIC - Plot as a bar graph
@@ -77,7 +92,11 @@ display(final_df)
 
 # COMMAND ----------
 
-# MAGIC %md ### Clean up classroom
+# DBTITLE 0,--i18n-cec8ed06-c40d-46d8-86c5-ecaebf65fe68
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Clean up classroom
 
 # COMMAND ----------
 

@@ -7,7 +7,10 @@
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-c8b680c1-52ff-46a1-95a8-017dd1faf468
 # MAGIC %md
+# MAGIC 
+# MAGIC 
 # MAGIC # Additional Functions
 # MAGIC 
 # MAGIC ##### Objectives
@@ -38,7 +41,11 @@ display(sales_df)
 
 # COMMAND ----------
 
-# MAGIC %md ### Non-aggregate and Miscellaneous Functions
+# DBTITLE 0,--i18n-0fc5aedb-0dcd-4ce5-affb-742c6f476b4d
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Non-aggregate and Miscellaneous Functions
 # MAGIC Here are a few additional non-aggregate and miscellaneous built-in functions.
 # MAGIC 
 # MAGIC | Method | Description |
@@ -50,7 +57,12 @@ display(sales_df)
 
 # COMMAND ----------
 
-# MAGIC %md We could select a particular column using the **`col`** function
+# DBTITLE 0,--i18n-36663576-e486-4760-9b82-988bedeea35a
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC We could select a particular column using the **`col`** function
 
 # COMMAND ----------
 
@@ -60,7 +72,12 @@ display(gmail_accounts)
 
 # COMMAND ----------
 
-# MAGIC %md **`lit`** can be used to create a column out of a value, which is useful for appending columns.  
+# DBTITLE 0,--i18n-a503922e-7844-4001-8748-28d229a9a559
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC **`lit`** can be used to create a column out of a value, which is useful for appending columns.
 
 # COMMAND ----------
 
@@ -68,7 +85,11 @@ display(gmail_accounts.select("email", lit(True).alias("gmail user")))
 
 # COMMAND ----------
 
-# MAGIC %md ### DataFrameNaFunctions
+# DBTITLE 0,--i18n-2b3829c9-d241-46df-9d6d-823fa84ba889
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### DataFrameNaFunctions
 # MAGIC <a href="https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrameNaFunctions.html#pyspark.sql.DataFrameNaFunctions" target="_blank">DataFrameNaFunctions</a> is a DataFrame submodule with methods for handling null values. Obtain an instance of DataFrameNaFunctions by accessing the **`na`** attribute of a DataFrame.
 # MAGIC 
 # MAGIC | Method | Description |
@@ -79,8 +100,11 @@ display(gmail_accounts.select("email", lit(True).alias("gmail user")))
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-e4a09833-ad6b-4e7b-b782-e832fd8752a8
 # MAGIC %md
-# MAGIC Here we'll see the row count before and after dropping rows with null/NA values.  
+# MAGIC 
+# MAGIC 
+# MAGIC Here we'll see the row count before and after dropping rows with null/NA values.
 
 # COMMAND ----------
 
@@ -89,8 +113,11 @@ print(sales_df.na.drop().count())
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-76375049-bcf6-40f3-95e6-cdf8721a2b5e
 # MAGIC %md
-# MAGIC Since the row counts are the same, we have the no null columns.  We'll need to explode items to find some nulls in columns such as items.coupon.  
+# MAGIC 
+# MAGIC 
+# MAGIC Since the row counts are the same, we have the no null columns.  We'll need to explode items to find some nulls in columns such as items.coupon.
 
 # COMMAND ----------
 
@@ -101,7 +128,12 @@ print(sales_exploded_df.select("items.coupon").na.drop().count())
 
 # COMMAND ----------
 
-# MAGIC %md We can fill in the missing coupon codes with **`na.fill`**
+# DBTITLE 0,--i18n-e97ff3e5-0c2f-40c4-b73c-a6b558264191
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC We can fill in the missing coupon codes with **`na.fill`**
 
 # COMMAND ----------
 
@@ -109,7 +141,11 @@ display(sales_exploded_df.select("items.coupon").na.fill("NO COUPON"))
 
 # COMMAND ----------
 
-# MAGIC %md ### Joining DataFrames
+# DBTITLE 0,--i18n-a61ddd73-4269-47f4-90ec-65035cdd2261
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Joining DataFrames
 # MAGIC The DataFrame <a href="https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrame.join.html?highlight=join#pyspark.sql.DataFrame.join" target="_blank">**`join`**</a> method joins two DataFrames based on a given join expression. 
 # MAGIC 
 # MAGIC Several different types of joins are supported:
@@ -128,7 +164,10 @@ display(sales_exploded_df.select("items.coupon").na.fill("NO COUPON"))
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-9e8fb941-044c-4640-8fad-9278a8c26a84
 # MAGIC %md
+# MAGIC 
+# MAGIC 
 # MAGIC We'll load in our users data to join with our gmail_accounts from above.
 
 # COMMAND ----------

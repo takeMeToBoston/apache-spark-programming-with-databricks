@@ -7,7 +7,10 @@
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-536ff4eb-272a-489d-8bb9-59f9ef0de847
 # MAGIC %md
+# MAGIC 
+# MAGIC 
 # MAGIC # Revenue by Traffic Lab
 # MAGIC Get the 3 traffic sources generating the highest total revenue.
 # MAGIC 1. Aggregate revenue by traffic source
@@ -25,7 +28,10 @@
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-e6e01ed4-02eb-4b48-8b90-84d440c515a0
 # MAGIC %md
+# MAGIC 
+# MAGIC 
 # MAGIC ### Setup
 # MAGIC Run the cell below to create the starting DataFrame **`df`**.
 
@@ -44,9 +50,13 @@ display(df)
 
 # COMMAND ----------
 
-# MAGIC %md ### 1. Aggregate revenue by traffic source
+# DBTITLE 0,--i18n-917ddee5-b24d-4f28-9931-b251e5708c35
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### 1. Aggregate revenue by traffic source
 # MAGIC - Group by **`traffic_source`**
-# MAGIC - Get sum of **`revenue`** as **`total_rev`**. Round this to the tens decimal place (e.g. `nnnnn.n`). 
+# MAGIC - Get sum of **`revenue`** as **`total_rev`**. 
 # MAGIC - Get average of **`revenue`** as **`avg_rev`**
 # MAGIC 
 # MAGIC Remember to import any necessary built-in functions.
@@ -66,7 +76,12 @@ display(traffic_df)
 
 # COMMAND ----------
 
-# MAGIC %md **1.1: CHECK YOUR WORK**
+# DBTITLE 0,--i18n-3c5e0ac8-5f3f-4848-8403-dae36db0d3b5
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC **1.1: CHECK YOUR WORK**
 
 # COMMAND ----------
 
@@ -81,7 +96,11 @@ print("All test pass")
 
 # COMMAND ----------
 
-# MAGIC %md ### 2. Get top three traffic sources by total revenue
+# DBTITLE 0,--i18n-718d5dd8-6d52-442d-88af-ecf838d5deb8
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### 2. Get top three traffic sources by total revenue
 # MAGIC - Sort by **`total_rev`** in descending order
 # MAGIC - Limit to first three rows
 
@@ -93,7 +112,12 @@ display(top_traffic_df)
 
 # COMMAND ----------
 
-# MAGIC %md **2.1: CHECK YOUR WORK**
+# DBTITLE 0,--i18n-a6f740e0-3808-4626-9c60-924cbcaafd5a
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC **2.1: CHECK YOUR WORK**
 
 # COMMAND ----------
 
@@ -106,7 +130,11 @@ print("All test pass")
 
 # COMMAND ----------
 
-# MAGIC %md ### 3. Limit revenue columns to two decimal places
+# DBTITLE 0,--i18n-72051bbe-4207-44b1-95ef-f5beee6d10e2
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### 3. Limit revenue columns to two decimal places
 # MAGIC - Modify columns **`avg_rev`** and **`total_rev`** to contain numbers with two decimal places
 # MAGIC   - Use **`withColumn()`** with the same names to replace these columns
 # MAGIC   - To limit to two decimal places, multiply each column by 100, cast to long, and then divide by 100
@@ -123,7 +151,12 @@ display(final_df)
 
 # COMMAND ----------
 
-# MAGIC %md **3.1: CHECK YOUR WORK**
+# DBTITLE 0,--i18n-e90f2db4-1f38-4c46-87de-2760f96b2de8
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC **3.1: CHECK YOUR WORK**
 
 # COMMAND ----------
 
@@ -135,7 +168,10 @@ print("All test pass")
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-060c0140-3c4c-4558-96de-f7c2379742d3
 # MAGIC %md
+# MAGIC 
+# MAGIC 
 # MAGIC ### 4. Bonus: Rewrite using a built-in math function
 # MAGIC Find a built-in math function that rounds to a specified number of decimal places
 
@@ -153,7 +189,12 @@ display(bonus_df)
 
 # COMMAND ----------
 
-# MAGIC %md **4.1: CHECK YOUR WORK**
+# DBTITLE 0,--i18n-9875e048-7810-4019-9891-712d6b7a5256
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC **4.1: CHECK YOUR WORK**
 
 # COMMAND ----------
 
@@ -165,7 +206,11 @@ print("All test pass")
 
 # COMMAND ----------
 
-# MAGIC %md ### 5. Chain all the steps above
+# DBTITLE 0,--i18n-085d88db-a489-4142-9e04-47687adcf61d
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### 5. Chain all the steps above
 
 # COMMAND ----------
 
@@ -202,7 +247,12 @@ display(chain_df)
 
 # COMMAND ----------
 
-# MAGIC %md **5.1: CHECK YOUR WORK**
+# DBTITLE 0,--i18n-7ca119b7-9322-4f04-9c58-c7873a1ea474
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC **5.1: CHECK YOUR WORK**
 
 # COMMAND ----------
 
@@ -215,7 +265,11 @@ print("All test pass")
 
 # COMMAND ----------
 
-# MAGIC %md ### Clean up classroom
+# DBTITLE 0,--i18n-60b8db05-ebb2-4d50-bed2-c72259929b16
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Clean up classroom
 
 # COMMAND ----------
 

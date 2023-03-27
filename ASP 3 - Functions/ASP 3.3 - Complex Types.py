@@ -7,7 +7,10 @@
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-0a3c3f90-d80f-4eb9-8f94-930aba6cadd1
 # MAGIC %md
+# MAGIC 
+# MAGIC 
 # MAGIC # Complex Types
 # MAGIC 
 # MAGIC Explore built-in functions for working with collections and strings.
@@ -49,7 +52,11 @@ display(details_df)
 
 # COMMAND ----------
 
-# MAGIC %md ### String Functions
+# DBTITLE 0,--i18n-ac5b4610-6efc-4e5a-acd8-90933422a950
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### String Functions
 # MAGIC Here are some of the built-in functions available for manipulating strings.
 # MAGIC 
 # MAGIC | Method | Description |
@@ -63,7 +70,10 @@ display(details_df)
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-3f18adec-4808-4071-93bb-2ec5964512f8
 # MAGIC %md
+# MAGIC 
+# MAGIC 
 # MAGIC For example: let's imagine that we need to parse our **`email`** column. We're going to use the **`split`** function  to split domain and handle.
 
 # COMMAND ----------
@@ -76,7 +86,11 @@ display(df.select(split(df.email, '@', 0).alias('email_handle')))
 
 # COMMAND ----------
 
-# MAGIC %md ### Collection Functions
+# DBTITLE 0,--i18n-ab537316-5715-4c11-9df8-a36f70fa9b78
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Collection Functions
 # MAGIC 
 # MAGIC Here are some of the built-in functions available for working with arrays.
 # MAGIC 
@@ -96,7 +110,11 @@ display(mattress_df)
 
 # COMMAND ----------
 
-# MAGIC %md ### Aggregate Functions
+# DBTITLE 0,--i18n-f4da035e-b5c1-462d-bb28-b393614dbf54
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Aggregate Functions
 # MAGIC 
 # MAGIC Here are some of the built-in aggregate functions available for creating arrays, typically from GroupedData.
 # MAGIC 
@@ -107,7 +125,12 @@ display(mattress_df)
 
 # COMMAND ----------
 
-# MAGIC %md Let's say that we wanted to see the sizes of mattresses ordered by each email address. For this, we can use the **`collect_set`** function
+# DBTITLE 0,--i18n-b0cd9063-d89e-47b6-9848-3da8c7e222f0
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC Let's say that we wanted to see the sizes of mattresses ordered by each email address. For this, we can use the **`collect_set`** function
 
 # COMMAND ----------
 
@@ -117,7 +140,10 @@ display(size_df)
 
 # COMMAND ----------
 
+# DBTITLE 0,--i18n-497a00ae-83d5-4460-883f-66ebc8598011
 # MAGIC %md
+# MAGIC 
+# MAGIC 
 # MAGIC 
 # MAGIC ##Union and unionByName
 # MAGIC <img src="https://files.training.databricks.com/images/icon_warn_32.png" alt="Warning"> The DataFrame <a href="https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrame.union.html" target="_blank">**`union`**</a> method resolves columns by position, as in standard SQL. You should use it only if the two DataFrames have exactly the same schema, including the column order. In contrast, the DataFrame <a href="https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrame.unionByName.html" target="_blank">**`unionByName`**</a> method resolves columns by name.  This is equivalent to UNION ALL in SQL.  Neither one will remove duplicates.  
@@ -130,7 +156,11 @@ mattress_df.schema==size_df.schema
 
 # COMMAND ----------
 
-# MAGIC %md 
+# DBTITLE 0,--i18n-66158320-fd13-4577-b7cb-ad4a57578a40
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
 # MAGIC If we do get the two schemas to match with a simple **`select`** statement, then we can use a **`union`**
 
 # COMMAND ----------
@@ -144,7 +174,11 @@ mattress_count + size_count == union_count
 
 # COMMAND ----------
 
-# MAGIC %md ### Clean up classroom
+# DBTITLE 0,--i18n-bfc7136f-f5f9-4c6b-bcaa-2ec8ad759e20
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC ### Clean up classroom
 # MAGIC 
 # MAGIC And lastly, we'll clean up the classroom.
 
